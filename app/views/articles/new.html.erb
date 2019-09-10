@@ -1,0 +1,21 @@
+<h1> New Health Article by: <%= @physician.name %> </h1>
+
+<div class="card card-form mb-3">
+<div class="form-group">
+
+<%= form_for [@physician, @article] do |f| %>
+<%= f.label :title %>
+<%= f.text_field :title, required: true, class: 'form-control' %>
+<br>
+<%= f.label :body %>
+<%= f.text_area :body, required: true, class: 'form-control' %>
+<br>
+<br>
+<%= f.submit %>
+<% end %>
+</div>
+</div>
+
+<button>
+ <%= link_to 'Cancel', physicians_path %>
+</button>

@@ -1,0 +1,30 @@
+<h1>Add Appointment with <%= @physician.name %> </h1>
+
+<div class="card card-form mb-3">
+<div class="form-group">
+
+<%= form_with(model: [@physician, @appointment], local: true ) do |f| %>
+
+  <%= f.label :patient %>  <br />
+  <%= f.select :patient_id, @patients.collect { |pa| [pa.name, pa.id] }, class: 'form-control form-control-lg' %>
+  <br />
+  <br />
+  <%= f.label :date %>
+<%= f.date_field :date, as: :date, value: f.object.try(:strftime,"%m/%d/%Y"), class: 'form-control' %>
+
+  <br />
+  <%= f.label :time %>
+  <%= f.time_field :time,
+      value: "%H:%M",
+      min: 'hh:mm:ss',
+      max: 'hh:mm:ss', class: 'form-control'  %>
+  <br />
+  <%= f.submit nil, class: "ui green button inverted" %>
+
+<% end %>
+</div>
+</div>
+
+<button>
+ <%= link_to 'Cancel', physicians_path %>
+</button>

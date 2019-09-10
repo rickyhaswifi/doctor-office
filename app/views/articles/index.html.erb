@@ -1,0 +1,14 @@
+<h1 class="mb-3"><%= @physician.name %>'s Articles</h1>
+
+<hr>
+<% @physician.articles.each do |article| %>
+<h1><%= article.title %></h1>
+<p><%= article.body %></p>
+<p>Article by: <%= article.physician.name %></p>
+<p> <%= link_to 'Update Details', edit_physician_article_path(@physician, article) %> - <%= link_to 'Remove', physician_article_path(@physician, article), method: :delete %> </p>
+<% end %>
+
+<hr>
+<button class="btn btn-info"> 
+<%= link_to 'New Article', new_physician_article_path(@physician) %>
+</button>

@@ -1,0 +1,69 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+body{
+    background-color: #f2f2f2 !important;
+    padding: 1rem;
+}
+
+.card-form h1{
+color: #5c5c5c !important;
+}
+
+.container-fluid{
+    padding: 1em;
+}
+
+.card-form{
+    padding: 2em;
+}
+
+nav a {
+ color: white !important;
+}
+
+
+
+.btn a{
+color: white;
+}
+
+a:active, a.hover, .card-form a{
+color: #18A2B8 !important;
+}
+
+ul{
+    list-style: none;
+}
+
+.search form input{
+    color: #000;
+    background-color: #f4f4f4;
+}
+
+form input {
+    display: inline-block;
+    font-weight: 400;
+    color: #fff;
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+    order: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}

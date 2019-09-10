@@ -1,0 +1,32 @@
+<h1>Patients</h1>
+
+<hr />
+
+<h2><%= @patient.length <= 0 ? "No patients" : "" %>  </h2> 
+
+<div class="search mb-3">
+<%= form_tag(patients_path,  method: :get) do %>
+  <%= text_field_tag :search, params[:search], placeholder: 'Name or Age' %>
+  <%= submit_tag 'Search', name: nil %> 
+<% end %>
+  <%= link_to 'Reset', patients_path %>
+
+</div>
+
+<ul>
+
+  <% @patient.each do |patient| %>
+    <li>
+<div class="card card-form mb-3">
+      <h1> Name: <%= link_to patient.name, patient %> </h1>
+      <p> AGE: <%= patient.age %> • <%= patient.phone_number %> </p>
+  <% end %>
+    </li>
+  </div>
+</ul>
+
+<center>
+<button class="btn btn-info mt-3 mb-3"> 
+<%= link_to 'Add patient', new_patient_path %>
+</button>
+</center>

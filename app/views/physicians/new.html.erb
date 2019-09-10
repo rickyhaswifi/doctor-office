@@ -1,0 +1,19 @@
+<h1>Welcome to our practice</h1>
+<h2>Please fill out the new physician form</h2>
+
+<div class="card card-form mb-3">
+<div class="form-group">
+
+<%= form_for @physician do |f| %>
+
+    <%= f.label :name %>
+    <%= f.text_field :name, required: true, class: 'form-control' %>
+    <br>
+    <%= f.label :specialty %>
+    <%= f.text_field :specialty, required: true, class: 'form-control' %>
+    <br>
+    <%= f.submit %>
+<% end %>
+
+</div>
+</div>

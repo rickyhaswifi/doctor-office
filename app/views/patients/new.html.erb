@@ -1,0 +1,25 @@
+<h1>Welcome to our practice</h1>
+<h2>Please fill out the new patient form</h2>
+
+<div class="card card-form mb-3">
+<div class="form-group">
+
+<%= form_for @patient do |f| %>
+
+    <%= f.label :name %>
+    <%= f.text_field :name, required: true, class: 'form-control' %>
+    <br>
+    <%= f.label :age %>
+    <%= f.text_field :age, required: true, class: 'form-control' %>
+    <br>
+    <%= f.label :phone_number %>
+    <%= f.text_field :phone_number, required: true, class: 'form-control' %>
+    <br>
+    <%= f.label :reason %>
+    <%= f.text_area :reason, required: true, class: 'form-control' %>
+    <br>
+    <%= f.submit %>
+<% end %>
+
+</div>
+</div>

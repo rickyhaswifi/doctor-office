@@ -1,0 +1,21 @@
+    <h1> Physician: <%= @physician.name %> </h1>
+    <h2> Specialty Field: <%= @physician.specialty %> </h2>
+
+    <ul> 
+    <li>  </li> 
+    </ul>
+    
+| <%= link_to 'See Appointments', [@physician, Appointment] %> |
+<%= link_to 'New Appointment', new_physician_appointment_path(@physician) %> |
+<%= link_to 'New Article', new_physician_article_path(@physician) %> |
+
+<hr>
+
+
+<p> Update physician details </p>
+
+<button class="btn btn-info"> <%= link_to 'Back', physicians_path %> </button>
+
+<button class="btn btn-warning"> <%= link_to 'Update Details', edit_physician_path(@physician) %> </button>
+
+<button class="btn btn-danger">  <%= link_to 'Fire Physician', @physician,  method: :delete %> </button>

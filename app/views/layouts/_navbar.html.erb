@@ -1,0 +1,24 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
+ <%= link_to root_path do %>
+<i class="fas fa-user-md"></i>
+<% end %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+         <%= link_to 'Home', root_path, class: 'nav-link' %>
+      </li>
+      <li class="nav-item">
+     <%= link_to 'View Physicians', physicians_path, class: 'nav-link' %>
+      </li>
+      <li class="nav-item">
+   <%= link_to 'View Patients', patients_path, class: 'nav-link' %>
+      </li>
+    </ul>
+    <span class="navbar-text">
+     <button class="btn btn-info">Login</button>
+    </span>
+  </div>
+</nav>

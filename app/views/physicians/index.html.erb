@@ -1,0 +1,37 @@
+<h1>Physicians</h1>
+<hr />
+
+<h2><%= @physician.length <= 0 ? "No patients" : "" %></h2> 
+
+<div class="search mb-3">
+<%= form_tag(physicians_path,  method: :get) do %>
+  <%= text_field_tag :search, params[:search], placeholder: 'Last Name or Specialty' %>
+  <%= submit_tag 'Search', name: nil %> 
+<% end %>
+  <%= link_to 'Reset', physicians_path %>
+
+</div>
+
+<ul>
+  <% @physician.each do |physician| %>
+    <li>
+
+<div class="card card-form mb-3">
+<div class="form-group">
+      <h1><%= link_to physician.name, physician %></h1>
+      <p>Specialty: <%= physician.specialty %></p>
+      <p> <%= link_to 'See Appointments', physician_appointments_path(physician) %> </p>
+      <p> <%= link_to 'See Articles', physician_articles_path(physician) %> </p>
+</div>
+
+
+</div>
+    </li>
+  <% end %>
+</ul>
+
+<center>
+<button class="btn btn-info mt-3 mb-3"> 
+<%= link_to 'New physician', new_physician_path %>
+</button>
+</center>
